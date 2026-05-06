@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis CSS */
+:root {
+    --color-light : #ffffff;
+    --color-dark: #111;
+    --color-yello: #fff017;
+    --color-orange-alpha: rgb(255, 240, 23, .25);
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacin-lg: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
+/* formatações básicas */
+a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--color-orange);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.hero {
+    color: var(--color-light);
+    height: 100vh;
+    padding-inline: var(--spacin-lg);
+    background-image: linear-gradient(to top,rgba(0,0,0, .8), rgba(0,0,0, .4)),
+    url(../images/motos/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    
+    }
+
+.hero-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-menu {
+    display: flex;
+    gap: var(--spacing-md)
+}
+
+.cta {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacin-lg);
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 8vmin;
+}
+
+.cta p {
+width: 80%;
+line-height: 1.6;
+text-wrap: balance;
+}
+
+.btn {
+    border: 2px solid var(--color-dark);
+    padding: var(--spacing-sm) var(--spacin-lg);
+    border-radius: 80px;
+    background-color: var(--color-orange-alpha);
+    transition: .5s;
+}
+.btn:hover {
+    background-color: transparent;
+}
+
+.icon {
+animation: motinho 2s infinite linear;
+}
+
+@keyframes motinho {
+  0%,
+  100% {
+    transform: translateX(0);
+  } 
+  50% {
+    transform: translateX(10px);
+  } 
+}
+
+.motos{
+background-color: var(--color-dark);
+color: var(--color-light);
+
+}
+
+.motos h2{
+    font-size: 6vmin;
+    padding: var(--spacin-lg);
+}
+
+.grid-motos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--spacing-md);
+}
+
+.moto-item{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid  var(--color-yello);
+    border-radius: 15px;
+ box-shadow: 0 0 10px var(--color-orange-alpha);
+ padding: var(--spacing-md);
+    
+    
+    
+}
+
+.moto-item img{
+    width: 100%;
+    border-radius: 15px;
+ }
+
+.container {
+    min-height: 100vh;
+    
+}
