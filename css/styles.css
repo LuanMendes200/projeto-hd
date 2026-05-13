@@ -8,8 +8,8 @@
 :root {
     --color-light : #ffffff;
     --color-dark: #111;
-    --color-yello: #fff017;
-    --color-orange-alpha: rgb(255, 240, 23, .25);
+    --color-yellow: #fff017;
+    --color-yellow-alpha: rgb(255, 240, 23, .25);
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacin-lg: 30px;
@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-    color: var(--color-orange);
+    color: var(--color-yellow);
 }
 
 ul, ol {
@@ -49,9 +49,7 @@ ul, ol {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    
-    
-    }
+}
 
 .hero-header {
     height: 100px;
@@ -88,7 +86,7 @@ text-wrap: balance;
     border: 2px solid var(--color-dark);
     padding: var(--spacing-sm) var(--spacin-lg);
     border-radius: 80px;
-    background-color: var(--color-orange-alpha);
+    background-color: var(--color-yellow-alpha);
     transition: .5s;
 }
 .btn:hover {
@@ -112,7 +110,6 @@ animation: motinho 2s infinite linear;
 .motos{
 background-color: var(--color-dark);
 color: var(--color-light);
-
 }
 
 .motos h2{
@@ -121,34 +118,79 @@ color: var(--color-light);
 }
 
 .grid-motos{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
 }
 
 .moto-item{
     width: 30%;
+    text-align: center;
+    border: 1px solid  var(--color-yello);
+    box-shadow: 0 0 10px var(--color-yellow-alpha);
+    border-radius: 15px;
+    padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    border: 1px solid  var(--color-yello);
-    border-radius: 15px;
- box-shadow: 0 0 10px var(--color-orange-alpha);
- padding: var(--spacing-md);
-    
-    
-    
+    justify-content: center;
+    gap: var(--spacin-lg);
+    transition: .5s;
+    animation: viewAnimation both;
+    animation-timeline: view(70% 20%);
+}
+
+.moto-item:hover {
+    scale: 1.1;
 }
 
 .moto-item img{
-    width: 100%;
+    width: 70%;
     border-radius: 15px;
+ }
+
+ .moto-item h3 {
+    font-size: 3vmin;
+ }
+
+ .moto-item p {
+    width: 70%;
+    text-wrap: balance;
+    line-height: 1.6;
+ }
+
+ /* animação para os cards */
+ @keyframes viewAnimation {
+    from{
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
  }
 
 .container {
     min-height: 100vh;
-    
+}
+
+/* design responsivo */
+
+@media(width <= 950px){
+
+    .moto-item{
+        width: 45%;
+    }
+}
+
+@media(width <= 650px){
+   .moto-item{
+    width: 90%;
+
+   } 
 }
